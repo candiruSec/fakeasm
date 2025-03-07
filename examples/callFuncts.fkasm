@@ -1,0 +1,26 @@
+label run_x_times
+  push gai gbi ret
+  mov gbi 0
+
+  label .loop
+    cmp gbi gai
+    jge .exit_loop
+    add gbi 1
+
+    goto gap
+    goto .loop
+  
+  label .exit_loop
+    pop ret gbi gai
+    ret
+
+label print_hi
+  printchar 104 105 10
+  ret
+
+main
+  mov gai 5
+  str func "print_hi"
+  movarr gap func
+  goto run_x_times
+  exit 0
