@@ -1,0 +1,19 @@
+main
+  int steps 10
+  int num1 0
+  int num2 1
+  int nextNumber 1
+  int count 1
+
+label loop
+  print nextNumber
+  printchar 10
+  add count 1
+  mov num1 num2
+  mov num2 nextNumber
+  int buf num1
+  add buf num2
+  mov nextNumber buf
+  cmp count steps
+  jle loop
+  exit 0

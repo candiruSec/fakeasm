@@ -1,0 +1,32 @@
+main
+  str hello "hello mom"
+  movarr gap hello
+  goto printStr
+  exit 0
+
+;; Get index from gap
+;; Print gap[gai]
+;; gai++
+;; if gai > len(gap) - 1
+;; ret
+
+label printStr
+  ;; init
+
+  push ret tar gai
+  mov gai 0
+
+  label printStrLoop
+    len gap
+    sub tar 1
+    cmp gai tar
+    jg exitPrintStr
+    index gap gai
+    printchar tar
+    add gai 1
+    goto printStrLoop
+  
+  label exitPrintStr
+    printchar 10
+    pop gai tar ret
+    ret
